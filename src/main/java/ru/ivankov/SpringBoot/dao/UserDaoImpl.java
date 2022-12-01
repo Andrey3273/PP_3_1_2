@@ -15,7 +15,6 @@ public class UserDaoImpl implements UserDao {
 
 
     @Override
-    @Transactional
     public List<User> getAllUsers() {
         List<User> users = manager.createQuery("select us from User us").getResultList();
         return users;
@@ -24,7 +23,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     @Transactional
     public User getUserById(int id) {
-        return manager.find(User.class,id);
+        return manager.find(User.class, id);
     }
 
     @Override
@@ -36,7 +35,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     @Transactional
     public void updateUser(int id, User updatedUser) {
-        User user = manager.find(User.class,id);
+        User user = manager.find(User.class, id);
         user.setFirstName(updatedUser.getFirstName());
         user.setLastName(updatedUser.getLastName());
     }

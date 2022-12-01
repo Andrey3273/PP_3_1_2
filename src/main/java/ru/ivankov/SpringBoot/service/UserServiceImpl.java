@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserDao dao) {
         this.dao = dao;
     }
+
     @Override
     public List<User> getAllUsers() {
         return dao.getAllUsers();
@@ -33,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(int id, User updatedUser) {
-        dao.updateUser(id,updatedUser);
+        dao.updateUser(id, updatedUser);
     }
 
     @Override

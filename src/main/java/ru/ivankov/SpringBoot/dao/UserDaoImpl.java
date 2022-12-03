@@ -21,19 +21,16 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @Transactional
     public User getUserById(int id) {
         return manager.find(User.class, id);
     }
 
     @Override
-    @Transactional
     public void saveUser(User user) {
         manager.persist(user);
     }
 
     @Override
-    @Transactional
     public void updateUser(int id, User updatedUser) {
         User user = manager.find(User.class, id);
         user.setFirstName(updatedUser.getFirstName());
@@ -41,7 +38,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @Transactional
     public void deleteUser(int id) {
         manager.remove(getUserById(id));
     }
